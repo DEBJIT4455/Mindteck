@@ -4,41 +4,28 @@ namespace myconsoleapplication
 {
     class debjit
     {
-        static void Main(string[] args)
+        public delegate void Debjitdeligate(string name);
+        public delegate void Multideligate(int x, int y);
+        public void Multi(int x,int y)
         {
-           List<showroom> customer = new List<showroom>()
-            {
-                new showroom(){ cust_id=1,cust_Fname="Debjit",cust_lname="Purkaite",Bike_no=1265},
-                new showroom(){ cust_id=2,cust_Fname="sham",cust_lname="De",Bike_no=158},
-                new showroom(){ cust_id=3,cust_Fname="suvo",cust_lname="dey",Bike_no=1894},
-                new showroom(){ cust_id=4,cust_Fname="nishan",cust_lname="Mal",Bike_no=1368},
-                new showroom(){ cust_id=5,cust_Fname="souvik",cust_lname="ghosh",Bike_no=1458},
-                new showroom(){ cust_id=6,cust_Fname="tania",cust_lname="ghosh",Bike_no=1589},
-
-            };
-            var Bikeno = from bno in customer
-                       
-                         select bno;
-            foreach (var item in Bikeno)
-                Console.WriteLine(item.cust_Fname +" " + item.Bike_no);
-            Console.WriteLine("-----------");
-            customer.Add(new showroom { cust_id = 7, cust_Fname = "Kartick", cust_lname = "Basak", Bike_no = 1265 });
-            foreach (var item in Bikeno)
-                Console.WriteLine(item.cust_Fname + " " + item.Bike_no);
-            Console.WriteLine("-----------");
-            customer.Remove(new showroom { cust_id = 7, cust_Fname = "Kartick", cust_lname = "Basak", Bike_no = 1265 });
-            foreach (var item in Bikeno)
-                Console.WriteLine(item.cust_Fname + " " + item.Bike_no);
-
+            Console.WriteLine(x * y);
 
         }
-    }
-    public class showroom
-    {
-        public int cust_id { get; set; }
-        public string cust_Fname { get; set; }
-        public string cust_lname { get; set; }
-        public int Bike_no { get; set; }
+        public void name(string name)
+        {
+            Console.WriteLine("my name is" +" " + name);
+
+        }
+        static void Main(string[] args)
+        {
+            debjit d = new debjit();
+            Debjitdeligate obj1 = new Debjitdeligate(d.name);
+            Multideligate obj2 = new Multideligate(d.Multi);
+            obj1("Debjit");
+            obj2(10, 20);
+
+        }
+         
     }
 
 }
