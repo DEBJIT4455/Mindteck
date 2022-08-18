@@ -16,7 +16,7 @@ namespace myconsoleapplication
             Console.WriteLine("my name is" +" " + name);
 
         }
-        static void Main(string[] args)
+       static void Main(string[] args)
         {
             debjit d = new debjit();
             Debjitdeligate obj1 = new Debjitdeligate(d.name);
