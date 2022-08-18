@@ -1,32 +1,29 @@
-﻿// See https://aka.ms/new-console-template for more informationusing.system;
+﻿// See https://aka.ms/new-console-template for more information
 using System;
-namespace myconsoleapplication
+class vechile
 {
-    class debjit
+    string Brand_Name;
+    public void Quality()
     {
-        public delegate void Debjitdeligate(string name);
-        public delegate void Multideligate(int x, int y);
-        public void Multi(int x,int y)
-        {
-            Console.WriteLine(x * y);
-
-        }
-        public void name(string name)
-        {
-            Console.WriteLine("my name is" +" " + name);
-
-        }
-       static void Main(string[] args)
-        {
-            debjit d = new debjit();
-            Debjitdeligate obj1 = new Debjitdeligate(d.name);
-            Multideligate obj2 = new Multideligate(d.Multi);
-            obj1("Debjit");
-            obj2(10, 20);
-
-        }
-         
+        Console.WriteLine("Quality is so good");
     }
+    public void Price( int x)
+    {
+        Console.WriteLine("The price of the Vechile is"+" " + "" + "" + x);
+    }
+    public void Customer_Support(string name)
+    {
+        Console.WriteLine("Customer support is "+""+name);
+    }
+    static void Main()
+    {
+        vechile v = new vechile();
+        Console.WriteLine(v.Brand_Name = "Royal Enfield");
+        v.Quality();
+        v.Price(120000);
+        v.Customer_Support("Good");
+        Console.ReadLine();
 
+
+    }
 }
-
